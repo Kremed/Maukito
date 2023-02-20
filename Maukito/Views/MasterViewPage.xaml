@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maukito.Views.MasterViewPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Maukito.ViewModels"
+    x:DataType="vm:MasterViewViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <!--
+        Notes For You :
+        1- install NeuGet : CommunityToolkit.Maui.MediaElement
+        2- Add this line to MauiProgram.cs : .UseMauiCommunityToolkitMediaElement()
+        3- add This Line To The Page : xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+        4- Go To ViewModels and take a look into MasterViewViewModel
+    -->
+
+
+    <Grid
+        Padding="20"
+        HorizontalOptions="FillAndExpand"
+        IgnoreSafeArea="True"
+        RowDefinitions="auto,auto,*,auto,auto"
+        RowSpacing="20"
+        VerticalOptions="FillAndExpand">
+
+        <!--  ROW 0 => Login Section  -->
+        <Grid ColumnDefinitions="*,*" HorizontalOptions="FillAndExpand">
+            <Label
+                Grid.Column="0"
+                FontFamily="Bold"
+                FontSize="25"
+                Text="Mau-Kito" />
+            <Label
+                Grid.Column="1"
+                FontFamily="FontAwesomeSolid"
+                FontSize="30"
+                HorizontalOptions="End"
+                Text="&#xf29a;" />
+        </Grid>
+
+        <!--  ROW 1 => Login Form & Entry Section  -->
+        <Border
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="FillAndExpand"
+            IsVisible="{Binding LoginVisibility}"
+            StrokeThickness="0"
+            VerticalOptions="FillAndExpand">
+
+            <Grid
+                ColumnDefinitions="*,*"
+                HorizontalOptions="FillAndExpand"
+                RowDefinitions="auto,auto,auto,auto"
+                RowSpacing="0"
+                VerticalOptions="CenterAndExpand">
+
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0,0,0,20"
+                    Padding="0"
+                    BackgroundColor="White"
+                    HeightRequest="45"
+                    HorizontalOptions="FillAndExpand"
+                    Stroke="{StaticResource Black}"
+                    StrokeShape="RoundRectangle 0"
+                    StrokeThickness="0.75">
+
+
+                    <Entry
+                        Margin="0,0,5,0"
+                        BackgroundColor="White"
+                        FontFamily="Medium"
+                        FontSize="12"
+                        HeightRequest="40"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="Start"
+                        Placeholder="Email Or Phone :"
+                        ReturnType="Go"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="FillAndExpand" />
+
+                </Border>
+
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0,0,0,20"
+                    Padding="0"
+                    BackgroundColor="White"
+                    HeightRequest="45"
+                    HorizontalOptions="FillAndExpand"
+                    Stroke="{StaticResource Black}"
+                    StrokeShape="RoundRectangle 0"
+                    StrokeThickness="0.75">
+
+
+                    <Entry
+                        Margin="10,0,10,0"
+                        BackgroundColor="White"
+                        FontFamily="Medium"
+                        FontSize="12"
+                        HeightRequest="40"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="Start"
+                        IsPassword="True"
+                        Placeholder="Password :"
+                        ReturnType="Done"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="FillAndExpand" />
+
+                </Border>
+
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    CornerRadius="0"
+                    FontFamily="Bold"
+                    HeightRequest="40"
+                    Text="Sign-in"
+                    TextColor="Black" />
+            </Grid>
+
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.0" Color="Transparent" />
+                    <GradientStop Offset="1.0" Color="Transparent" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <!--  ROW 1 => Register Section  -->
+        <Border
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Padding="0,10"
+            HorizontalOptions="FillAndExpand"
+            IsVisible="{Binding newUserVisibility}"
+            StrokeThickness="0"
+            VerticalOptions="FillAndExpand">
+
+            <Grid
+                ColumnDefinitions="*,*"
+                HorizontalOptions="FillAndExpand"
+                RowDefinitions="auto,auto,auto,auto,auto"
+                RowSpacing="0"
+                VerticalOptions="CenterAndExpand">
+
+
+
+
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0,0,0,20"
+                    Padding="0"
+                    BackgroundColor="White"
+                    HeightRequest="45"
+                    HorizontalOptions="FillAndExpand"
+                    Stroke="{StaticResource Black}"
+                    StrokeShape="RoundRectangle 0"
+                    StrokeThickness="0">
+
+
+                    <Entry
+                        Margin="0,0,0,0"
+                        BackgroundColor="White"
+                        FontFamily="Medium"
+                        FontSize="12"
+                        HeightRequest="40"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="Start"
+                        Placeholder="Email :"
+                        ReturnType="Next"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="FillAndExpand" />
+
+                </Border>
+
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0,0,0,20"
+                    Padding="0"
+                    BackgroundColor="White"
+                    HeightRequest="45"
+                    HorizontalOptions="FillAndExpand"
+                    Stroke="{StaticResource Black}"
+                    StrokeShape="RoundRectangle 0"
+                    StrokeThickness="0.75">
+
+
+                    <Entry
+                        Margin="0,0,5,0"
+                        BackgroundColor="White"
+                        FontFamily="Medium"
+                        FontSize="12"
+                        HeightRequest="40"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="Start"
+                        Keyboard="Telephone"
+                        Placeholder="Phone : +218924445555"
+                        ReturnType="Next"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="FillAndExpand" />
+
+                </Border>
+
+
+
+                <Border
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0,0,0,20"
+                    Padding="0"
+                    BackgroundColor="White"
+                    HeightRequest="45"
+                    HorizontalOptions="FillAndExpand"
+                    Stroke="{StaticResource Black}"
+                    StrokeShape="RoundRectangle 0"
+                    StrokeThickness="0.75">
+
+
+                    <Entry
+                        Margin="0,0,5,0"
+                        BackgroundColor="White"
+                        FontFamily="Medium"
+                        FontSize="12"
+                        HeightRequest="40"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="Start"
+                        IsPassword="True"
+                        Placeholder="Password :"
+                        ReturnType="Done"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="FillAndExpand" />
+
+                </Border>
+
+
+
+                <Button
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="Transparent"
+                    BorderColor="White"
+                    BorderWidth="1"
+                    CornerRadius="0"
+                    FontFamily="Bold"
+                    HeightRequest="40"
+                    Text="Create an account now"
+                    TextColor="White" />
+            </Grid>
+
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.0" Color="Transparent" />
+                    <GradientStop Offset="1.0" Color="Transparent" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <!--  ROW 3 => Bottom Buttons Section  -->
+        <Grid
+            Grid.Row="3"
+            Grid.Column="0"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="10"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="EndAndExpand">
+            <Button
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Transparent"
+                BorderColor="White"
+                BorderWidth="1"
+                Command="{Binding AuthFunctionCommand}"
+                CornerRadius="0"
+                FontFamily="Bold"
+                FontSize="12"
+                HeightRequest="50"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="{Binding LoginVisibility}"
+                Text="Don't have an account? Register now"
+                TextColor="White" />
+
+            <Button
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Command="{Binding AuthFunctionCommand}"
+                CornerRadius="0"
+                FontFamily="Bold"
+                FontSize="12"
+                HeightRequest="50"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="{Binding newUserVisibility}"
+                Text="Log in to your account"
+                TextColor="Black" />
+        </Grid>
+
+        <!--  ROW 4 => Short Discrption Section  -->
+        <Label
+            Grid.Row="4"
+            Grid.Column="2"
+            FontFamily="Medium"
+            FontSize="9"
+            HorizontalOptions="End"
+            HorizontalTextAlignment="Center"
+            LineHeight="1.5"
+            Text="This is an application for the purpose of learning and entertainment, we will constantly update it, and it will not contain program dependencies or links between pages, it is only intended to improve the user interface and user experience for dotnet maui developers, and provide a simplified reference for them."
+            TextColor="White"
+            VerticalOptions="Start" />
+
+        <!--
+            Notes For You :
+            
+            1- Simply, in order to be able to set the video in the background of the screen,
+            we had to make the video element to be centered in the Grid from row 0 to the last row,
+            and in our case the last row is row 4, all this done by using Grid.RowSpan attribute.
+            
+            2- We also set a color gradient between the video and the other elements in our model to give
+            some contrast between the elements, this done by using Z-Index attribute.
+        -->
+
+        <!--  Transparent Background  -->
+        <Border
+            Grid.Row="0"
+            Grid.RowSpan="5"
+            HeightRequest="{Binding VidHight}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            WidthRequest="{Binding VidWidth}"
+            ZIndex="-1">
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.0" Color="Transparent" />
+                    <GradientStop Offset="1.0" Color="{StaticResource Black}" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <!--  Video Media Elament  Background  -->
+        <toolkit:MediaElement
+            Grid.Row="0"
+            Grid.RowSpan="5"
+            HeightRequest="{Binding VidHight}"
+            HorizontalOptions="FillAndExpand"
+            ShouldAutoPlay="True"
+            ShouldKeepScreenOn="True"
+            ShouldLoopPlayback="True"
+            ShouldShowPlaybackControls="False"
+            Source="embed://roadstrain.mp4"
+            VerticalOptions="FillAndExpand"
+            WidthRequest="{Binding VidWidth}"
+            ZIndex="-2" />
+
+    </Grid>
+
+</ContentPage>

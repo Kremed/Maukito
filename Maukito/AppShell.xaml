@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Maukito.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Maukito"
+    xmlns:views="clr-namespace:Maukito.Views">
+
+    <ShellContent
+        Title="MasterView"
+        ContentTemplate="{DataTemplate views:MasterViewPage}"
+        Icon="iconblank.png"
+        Route="MasterViewPage"
+        Shell.NavBarIsVisible="true" />
+    <!--<ShellContent
+        Title="LocationView"
+        ContentTemplate="{DataTemplate views:LocationViewPage}"
+        Icon="iconmap.png"
+        Route="LocationViewPage"
+        Shell.NavBarIsVisible="true" />
+    <ShellContent
+        Title="Localization"
+        ContentTemplate="{DataTemplate views:LocalizationPage}"
+        Icon="iconlocalization.png"
+        Route="LocalizationPage"
+        Shell.NavBarIsVisible="true" />-->
+</Shell>
