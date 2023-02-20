@@ -3,6 +3,7 @@
     x:Class="Maukito.Views.MasterViewPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:vm="clr-namespace:Maukito.ViewModels"
     x:DataType="vm:MasterViewViewModel"
@@ -10,13 +11,16 @@
 
     <!--
         Notes For You :
-        1- install NeuGet : CommunityToolkit.Maui.MediaElement
+        1- install NuGet : CommunityToolkit.Maui.MediaElement
         2- Add this line to MauiProgram.cs : .UseMauiCommunityToolkitMediaElement()
-        3- add This Line To The Page : xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+        3- Add This Line To The Page : xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
         4- Go To ViewModels and take a look into MasterViewViewModel
+        5- Add Your Video File into : Resources/Raw
     -->
 
-
+    <Page.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="Transparent" StatusBarStyle="{AppThemeBinding Dark='LightContent', Light='LightContent'}" />
+    </Page.Behaviors>
     <Grid
         Padding="20"
         HorizontalOptions="FillAndExpand"
@@ -72,7 +76,7 @@
 
 
                     <Entry
-                        Margin="0,0,5,0"
+                        Margin="10,0,10,0"
                         BackgroundColor="White"
                         FontFamily="Medium"
                         FontSize="12"
@@ -153,9 +157,6 @@
                 RowSpacing="0"
                 VerticalOptions="CenterAndExpand">
 
-
-
-
                 <Border
                     Grid.Row="1"
                     Grid.Column="0"
@@ -171,7 +172,7 @@
 
 
                     <Entry
-                        Margin="0,0,0,0"
+                        Margin="10,0,10,0"
                         BackgroundColor="White"
                         FontFamily="Medium"
                         FontSize="12"
@@ -200,7 +201,7 @@
 
 
                     <Entry
-                        Margin="0,0,5,0"
+                        Margin="10,0,10,0"
                         BackgroundColor="White"
                         FontFamily="Medium"
                         FontSize="12"
@@ -214,8 +215,6 @@
                         VerticalOptions="FillAndExpand" />
 
                 </Border>
-
-
 
                 <Border
                     Grid.Row="3"
@@ -232,7 +231,7 @@
 
 
                     <Entry
-                        Margin="0,0,5,0"
+                        Margin="10,0,10,0"
                         BackgroundColor="White"
                         FontFamily="Medium"
                         FontSize="12"
@@ -246,8 +245,6 @@
                         VerticalOptions="FillAndExpand" />
 
                 </Border>
-
-
 
                 <Button
                     Grid.Row="4"
